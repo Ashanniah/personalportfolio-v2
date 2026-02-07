@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Portfolio Website",
       sub: "WEB APPLICATION",
       image: "src/web-proj-3.png",
-      link: "#",
+      link: "personalportfolio-v2.vercel.app",
       category: "Website",
       status: "Completed",
       desc:
