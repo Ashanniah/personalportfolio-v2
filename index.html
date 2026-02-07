@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal Portfolio - Aspiring Software Developer" />
+  <link rel="icon" type="image/png" href="src/name-logo.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="src/favicon-48.png">
+  <title>My Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Poppins", "sans-serif"] },
+        },
+      },
+    };
+  </script>
+
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900">
+<div class="min-h-screen bg-white">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 w-full z-[9999] bg-gradient-to-r from-[#4a0000] via-[#7a0000] to-[#b91c1c] shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 h-[70px] flex items-center justify-between">
+
+      <div class="flex items-center gap-2">
+        <img src="src/logo-name2.png" alt="Logo" class="h-8 w-auto object-contain" />
+      </div>
+
+      <ul class="hidden md:flex flex-1 justify-center items-center gap-8 text-white font-medium">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <button id="themeToggle" aria-label="Toggle dark mode"
+          class="w-10 h-10 rounded-full bg-white/15 border border-white/20 flex items-center justify-center hover:bg-white/25 transition">
+          <svg id="moonIcon" class="w-5 h-5 text-white dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646
+                9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg id="sunIcon" class="w-5 h-5 text-white hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3
+                m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707
+                m12.728 0l-.707.707M6.343 17.657l-.707.707
+                M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative bg-white overflow-hidden visible">
+    <div class="px-6 md:px-14 lg:px-20 w-full mt-[150px]">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
+        <div>
+          <h1 class="text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight">
+            <span
+              id="typingTitle"
+              class="inline-block whitespace-nowrap border-r-4 pr-2 bg-gradient-to-r from-[#4a0000] via-[#7a0000] to-[#b91c1c] bg-clip-text text-transparent"
+              data-text="Full-Stack Developer"
+            ></span>
+          </h1>
+
+          <p class="mt-6 text-lg md:text-xl lg:text-2xl text-gray-800 max-w-2xl leading-relaxed">
+            Bridging the gap between sleek user interfaces and robust server-side logic.
+            I build scalable, end-to-end web applications with a focus on performance and seamless user experiences.
+          </p>
+
+          <div class="mt-10 flex flex-wrap items-center gap-6">
+            <a href="#projects" class="cta-button">View Projects</a>
+
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/grachelle-mae-carmelotes/" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <svg viewBox="0 0 20 20"><path d="M16.337 1H3.663A2.665 2.665 0 001 3.663v12.674A2.665 2.665 0 003.663 19h12.674A2.665 2.665 0 0019 16.337V3.663A2.665 2.665 0 0016.337 1zm-9.79 14.5h-2.5v-8.1h2.5v8.1zm-1.25-9.2a1.45 1.45 0 110-2.9 1.45 1.45 0 010 2.9zm10.54 9.2h-2.5v-3.95c0-.94-.035-2.15-1.31-2.15-1.31 0-1.51 1.025-1.51 2.085v3.015h-2.5v-8.1h2.4v1.11h.034c.334-.632 1.152-1.3 2.373-1.3 2.537 0 3.005 1.668 3.005 3.842v4.448z"/></svg>
+              </a>
+              <a href="https://github.com/Ashanniah" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <svg viewBox="0 0 20 20"><path d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.891 1.529 2.341 1.544 2.914 1.185.09-.923.348-1.544.634-1.898-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.024A9.578 9.578 0 0110 4.844c.85.004 1.705.114 2.504.336 1.909-1.293 2.747-1.024 2.747-1.024.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.138 18.163 20 14.413 20 10c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/ashanniah/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+              <img src="src/instagram.png" alt="Instagram" class="icon-white"
+                  style="width:26px;height:26px;object-fit:contain;display:block;">
+            </a>
+              <a href="https://www.facebook.com/grachelle.carmelotes" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+              <img src="src/facebook.png" alt="Facebook" class="icon-white"
+                  style="width:26px;height:26px;object-fit:contain;display:block;">
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center lg:justify-end relative h-[400px] md:h-[500px] lg:h-[600px]">
+          <div class="hero-image-wrapper">
+            <button class="hero-arrow left" id="prevImg" aria-label="Previous image">&#10094;</button>
+            <img src="src/my-pic-1.png" alt="Creative Developer" class="hero-image" id="heroImage" />
+            <button class="hero-arrow right" id="nextImg" aria-label="Next image">&#10095;</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<!-- ABOUT SECTION (COMPLETE) -->
+<section id="about" class="hidden-section bg-white text-gray-900">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 w-full pt-[120px] pb-20">
+
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-5xl md:text-6xl font-bold text-[#7a0000] mb-4">About Me</h2>
+      <p class="text-lg text-gray-800 max-w-2xl mx-auto">
+        Creative IT Student passionate about design, development, and innovation
+      </p>
+    </div>
+
+    <!-- Top Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Image -->
+      <div class="flex justify-center">
+        <div class="relative w-80 h-96">
+          <div class="relative rounded-3xl overflow-hidden border-4 bg-[#7a0000] border-[#7a0000] shadow-lg">
+            <img src="src/my-pic-4.png" alt="About" class="w-full h-full object-cover" />
+          </div>
+          <!-- subtle glow -->
+          <div class="absolute -inset-3 rounded-[28px] bg-[#7a0000]/10 blur-2xl -z-10"></div>
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-4xl font-bold text-gray-900 mb-2">Grachelle Mae A. Carmelotes</h3>
+          <p class="text-xl text-[#7a0000] font-semibold">BSIT Student & Full-Stack Developer</p>
+        </div>
+
+        <p class="text-gray-800 leading-relaxed text-lg text-justify">
+        I’m driven by a passion for blending technology with creative design. My curiosity for innovation has evolved into a mission to craft digital solutions that are both functional and visually engaging. 
+        I focus on building scalable applications that deliver seamless user experiences from frontend to backend.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-xl p-6 bg-[#7a0000] text-white shadow-lg">
+            <h4 class="text-4xl font-bold mb-2">4+</h4>
+            <p class="text-sm opacity-90">Years of Learning<br />Tech & Development</p>
+          </div>
+
+          <div class="rounded-xl p-6 bg-[#7a0000] text-white shadow-lg">
+            <h4 class="text-4xl font-bold mb-2">10+</h4>
+            <p class="text-sm opacity-90">Projects Completed<br />Web & Mobile</p>
+          </div>
+        </div>
+
+        <div class="flex justify-center lg:justify-start">
+          <a href="#projects"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#7a0000] text-white font-semibold hover:bg-[#5c0000] transition shadow-md">
+            View Projects
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTRA ABOUT DESIGNS -->
+    <div class="about-extra mt-16">
+
+      <div class="skills-divider"></div>
+
+      <!-- Skills -->
+      <div class="skills-header">
+        <div>
+          <h3 class="skills-title">Skills</h3>
+          <p class="skills-subtitle">Core strengths and professional abilities</p>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-top"><h4>Leadership</h4><span class="skill-pct">90%</span></div>
+          <div class="skill-bar"><span style="width:90%"></span></div>
+          <p class="skill-desc">Guiding teams in designing and delivering user-focused software solutions with clear direction and collaboration.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top"><h4>Communication</h4><span class="skill-pct">65%</span></div>
+          <div class="skill-bar"><span style="width:65%"></span></div>
+          <p class="skill-desc">Sharing ideas effectively and continuously improving through project-based learning and teamwork.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top"><h4>Problem Solving</h4><span class="skill-pct">75%</span></div>
+          <div class="skill-bar"><span style="width:75%"></span></div>
+          <p class="skill-desc">Applying logical thinking and technical knowledge to build functional applications and resolve challenges.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top"><h4>Programming</h4><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><span style="width:85%"></span></div>
+          <p class="skill-desc">Developing efficient, scalable code for web, mobile, and backend systems with attention to quality and performance.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top"><h4>Teamwork</h4><span class="skill-pct">95%</span></div>
+          <div class="skill-bar"><span style="width:95%"></span></div>
+          <p class="skill-desc">Collaborating on projects to create interactive prototypes and validate design concepts through group effort.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top"><h4>Adaptability</h4><span class="skill-pct">90%</span></div>
+          <div class="skill-bar"><span style="width:90%"></span></div>
+          <p class="skill-desc">Quickly learning new tools and technologies to adjust to evolving project requirements and environments.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top"><h4>Designer</h4><span class="skill-pct">95%</span></div>
+          <div class="skill-bar"><span style="width:95%"></span></div>
+          <p class="skill-desc">Creating clean, scalable designs and visuals that enhance user experience across digital platforms.</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-top"><h4>Critical Analysis</h4><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><span style="width:80%"></span></div>
+          <p class="skill-desc">Assessing complex situations to make informed, strategic decisions.</p>
+        </div>
+      </div>
+
+      <div class="skills-divider"></div>
+
+      <!-- Technical Skills -->
+      <div class="techskills-header">
+        <h3 class="techskills-title">Technical Skills</h3>
+        <p class="techskills-subtitle">Technical proficiencies applied in real-world IT solutions</p>
+      </div>
+
+      <div class="techcats-grid">
+        <div class="techcats-card">
+          <h4 class="techcats-title">Programming Languages</h4>
+          <div class="pill-wrap">
+            <span class="pill-btn">Java</span>
+            <span class="pill-btn">Kotlin</span>
+            <span class="pill-btn">JavaScript</span>
+            <span class="pill-btn">Python</span>
+            <span class="pill-btn">C#</span>
+            <span class="pill-btn">C++</span>
+            <span class="pill-btn">PHP</span>
+            <span class="pill-btn">TypeScript</span>
+          </div>
+        </div>
+
+        <div class="techcats-card">
+          <h4 class="techcats-title">Web Development</h4>
+          <div class="pill-wrap">
+            <span class="pill-btn">HTML</span>
+            <span class="pill-btn">React</span>
+            <span class="pill-btn">Tailwind CSS</span>
+            <span class="pill-btn">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="techcats-card">
+          <h4 class="techcats-title">Database</h4>
+          <div class="pill-wrap">
+            <span class="pill-btn">MySQL</span>
+            <span class="pill-btn">MongoDB</span>
+            <span class="pill-btn">Firebase</span>
+            <span class="pill-btn">Microsoft SQL Server</span>
+            <span class="pill-btn">Supabase</span>
+          </div>
+        </div>
+
+        <div class="techcats-card">
+          <h4 class="techcats-title">Tools & Platforms</h4>
+          <div class="pill-wrap">
+            <span class="pill-btn">GitHub</span>
+            <span class="pill-btn">VS Code</span>
+            <span class="pill-btn">Android Studio</span>
+            <span class="pill-btn">Figma</span>
+            <span class="pill-btn">Canva</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-divider"></div>
+
+      <!-- Education -->
+      <div class="education-section mt-20">
+        <h2 class="text-3xl font-bold mb-8 text-[#7a0000]">Education</h2>
+
+        <div class="education-grid">
+          <div class="education-card">
+            <div class="education-header">
+              <h3>Bachelor of Science in Information Technology</h3>
+              <span class="edu-badge">2022 – 2026</span>
+            </div>
+            <p class="edu-school">University of Cebu - Banilad Campus</p>
+            <p class="edu-desc">
+              Maintained Dean’s List standing since first year, demonstrating dedication 
+              and excellence in academics while pursuing programming, database management, and software development.
+            </p>
+          </div>
+
+          <div class="education-card">
+            <div class="education-header">
+              <h3>Senior High School – STEM</h3>
+              <span class="edu-badge">2020 – 2022</span>
+            </div>
+            <p class="edu-desc">
+              Completed the STEM strand in senior high school, gaining a strong foundation in science and technology. This background developed analytical and problem-solving skills that prepared for advanced studies in Information Technology.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="hidden-section min-h-screen">
+    <div class="projects-container">
+      <div class="projects-header">
+        <h2 class="section-title">My Works</h2>
+
+        <div class="project-tabs-wrapper">
+          <div class="project-tabs-glass">
+            <button class="project-tab-pill active" data-filter="website">Website Application</button>
+            <button class="project-tab-pill" data-filter="mobile">Mobile Application</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-grid-two">
+        <!-- WEBSITE CARDS -->
+        <div class="project-card-item" data-category="website" data-project="web1">
+          <div class="project-img-wrapper">
+            <img src="src/web-proj-1.png" alt="Web Project 1">
+            <div class="project-overlay"><span>View Project</span></div>
+          </div>
+        </div>
+
+        <div class="project-card-item" data-category="website" data-project="web2">
+          <div class="project-img-wrapper">
+            <img src="src/web-proj-2.png" alt="Web Project 2">
+            <div class="project-overlay"><span>View Project</span></div>
+          </div>
+        </div>
+
+        <div class="project-card-item" data-category="website" data-project="web3">
+          <div class="project-img-wrapper">
+            <img src="src/web-proj-3.png" alt="Web Project 3">
+            <div class="project-overlay"><span>View Project</span></div>
+          </div>
+        </div>
+
+        <!-- ✅ MOBILE CARD (mobile.png) WITH SAME EFFECTS -->
+        <div class="project-card-item" data-category="mobile" data-project="mobile1">
+          <div class="project-img-wrapper">
+            <img src="src/mobile.png" alt="Mobile Project 1">
+            <div class="project-overlay"><span>View Project</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="hidden-section">
+    <div class="contact-wrap">
+      <header class="contact-header">
+        <h2 class="contact-title">Get In Touch</h2>
+        <p class="contact-subtitle">
+          Let’s connect! Whether it’s about projects, opportunities, or ideas, I’m just a message away.
+        </p>
+      </header>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18V6H3v10z" />
+            </svg>
+          </div>
+          <div class="contact-info">
+            <p class="contact-label">Email Address</p>
+            <p class="contact-text">
+              <a class="contact-link" href="mailto:carmelotesgrachelle15@gmail.com">carmelotesgrachelle15@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-divider"></div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l9-9 9 9M4 10v10h16V10" />
+            </svg>
+          </div>
+          <div class="contact-info">
+            <p class="contact-label">Home Address</p>
+            <p class="contact-text">Skyview Park Nivel Hills Busay, Cebu City</p>
+          </div>
+        </div>
+
+        <div class="contact-divider"></div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 5a2 2 0 012-2h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2h-1C9.716 19 5 14.284 5 8V7a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <div class="contact-info">
+            <p class="contact-label">Phone Number</p>
+            <p class="contact-text">
+              <a class="contact-link" href="tel:+639983453807">+63 998 345 3807</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="connect-plain">
+        <h3 class="connect-plain-title">Connect With Me</h3>
+        <div class="connect-plain-icons">
+          <!-- Instagram -->
+          <a href="https://www.linkedin.com/in/grachelle-mae-carmelotes/" target="_blank" class="connect-plain-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 20 20"><path d="M16.337 1H3.663A2.665 2.665 0 001 3.663v12.674A2.665 2.665 0 003.663 19h12.674A2.665 2.665 0 0019 16.337V3.663A2.665 2.665 0 0016.337 1zm-9.79 14.5h-2.5v-8.1h2.5v8.1zm-1.25-9.2a1.45 1.45 0 110-2.9 1.45 1.45 0 010 2.9zm10.54 9.2h-2.5v-3.95c0-.94-.035-2.15-1.31-2.15-1.31 0-1.51 1.025-1.51 2.085v3.015h-2.5v-8.1h2.4v1.11h.034c.334-.632 1.152-1.3 2.373-1.3 2.537 0 3.005 1.668 3.005 3.842v4.448z"/></svg>
+          </a>
+          <a href="https://github.com/Ashanniah" target="_blank" class="connect-plain-icon" aria-label="GitHub">
+            <svg viewBox="0 0 20 20"><path d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.891 1.529 2.341 1.544 2.914 1.185.09-.923.348-1.544.634-1.898-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.024A9.578 9.578 0 0110 4.844c.85.004 1.705.114 2.504.336 1.909-1.293 2.747-1.024 2.747-1.024.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.138 18.163 20 14.413 20 10c0-5.523-4.477-10-10-10z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/ashanniah/" target="_blank" class="connect-plain-icon" aria-label="Instagram">
+            <img src="src/instagram.png" alt="Instagram" class="icon-white"
+                style="width:34px;height:34px;object-fit:contain;display:block;">
+        </a>
+      <a href="https://www.facebook.com/grachelle.carmelotes" target="_blank" class="connect-plain-icon" aria-label="Facebook">
+        <img src="src/facebook.png" alt="Facebook" class="icon-white"
+            style="width:34px;height:34px;object-fit:contain;display:block;">
+      </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITE PROJECT MODAL -->
+  <div id="projectGallery" class="pg-modal hidden" aria-hidden="true">
+    <div class="pg-overlay" data-close="true"></div>
+
+    <div class="pg-panel" role="dialog" aria-modal="true" aria-label="Project Gallery">
+      <div class="pg-head">
+        <div>
+          <h3 id="pgTitle" class="pg-title">Project Title</h3>
+          <p id="pgSub" class="pg-sub"></p>
+        </div>
+        <button class="pg-x" type="button" aria-label="Close" data-close="true">×</button>
+      </div>
+
+      <div class="pg-divider"></div>
+
+      <div class="pg-body">
+        <div class="pg-left">
+          <div class="pg-preview">
+            <img id="pgPreviewImg" src="src/web-proj-1.png" alt="Project preview">
+          </div>
+
+          <a id="pgLink" href="#" target="_blank" rel="noopener noreferrer" class="pg-cta">
+            <span>View Live Demo</span>
+          </a>
+
+          <div class="pg-mini">
+            <div class="pg-mini-card">
+              <p class="pg-mini-label">Category</p>
+              <p id="pgMiniCategory" class="pg-mini-value">Web Application</p>
+            </div>
+
+            <div class="pg-mini-card">
+              <p class="pg-mini-label">Status</p>
+              <p id="pgStatus" class="pg-mini-value">Completed</p>
+            </div>
+
+            <div class="pg-cred-card" id="pgCredCard">
+              <p class="pg-cred-title">Credentials</p>
+              <div id="pgCredBody"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pg-right">
+          <div class="pg-card">
+            <h5 class="pg-card-title">Project Description</h5>
+            <p id="pgDesc" class="pg-card-text"></p>
+          </div>
+
+          <div class="pg-card">
+            <h5 class="pg-card-title">Key Features</h5>
+            <div id="pgFeatures" class="pg-features"></div>
+          </div>
+
+          <div class="pg-card">
+            <h5 class="pg-card-title">Development Tools</h5>
+            <div id="pgTools" class="pg-tags"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ MOBILE APP DEMO MODAL (SAME FORMAT AS WEB - pg style) -->
+<div id="mobileDemoModal" class="pg-modal hidden" aria-hidden="true">
+  <div class="pg-overlay" data-mapp-close="true"></div>
+
+  <div class="pg-panel mpp-panel" role="dialog" aria-modal="true" aria-label="Mobile Application Demo">
+    <div class="pg-head">
+      <div>
+        <h3 class="pg-title" id="mppTitle">Mobile Application</h3>
+        <p class="pg-sub" id="mppSub">FloodTrack: Flood Monitoring and Validation Using Citizen Reports, Weather Conditioning, and Multimedia Analysis.</p>
+      </div>
+      <button class="pg-x" type="button" aria-label="Close" data-mapp-close="true">×</button>
+    </div>
+
+    <div class="pg-divider"></div>
+
+    <div class="pg-body mpp-body">
+      <!-- LEFT (PHONE VIDEO PREVIEW like web modal preview) -->
+      <div class="pg-left">
+        <div class="mpp-phone">
+          <div class="mpp-phone-frame">
+            <video
+              id="mppVideo"
+              class="mpp-video"
+              src="src/mobile-proj-1.mp4"
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <button id="mppPlayBtn" class="mpp-play" type="button" aria-label="Play demo">▶</button>
+          </div>
+        </div>
+
+        <!-- Optional CTA -->
+        <button id="mppOpenControls" class="pg-cta mpp-cta" type="button">
+          <span>Play Demo</span>
+        </button>
+
+        <!-- Mini cards (same as web modal) -->
+        <div class="pg-mini">
+          <div class="pg-mini-card">
+            <p class="pg-mini-label">Category</p>
+            <p class="pg-mini-value">Mobile Application</p>
+          </div>
+
+          <div class="pg-mini-card">
+            <p class="pg-mini-label">Status</p>
+             <p id="pgStatus" class="pg-mini-value">Completed</p>
+          </div>
+
+</div>
+      </div>
+
+      <!-- RIGHT (DESCRIPTION/FEATURES/TAGS same as web modal cards) -->
+      <div class="pg-right">
+
+        <div class="pg-card">
+          <h5 class="pg-card-title">Project Description</h5>
+          <p class="pg-card-text" id="mppDesc">
+          FloodTrack Mobile App enables residents and local authorities to report, monitor, and validate flood incidents in real time. The app allows users to submit geotagged flood reports with photos or videos, view flood alerts on an interactive map, and receive timely notifications to support faster response and community safety.
+          </p>
+        </div>
+
+        <div class="pg-card">
+          <h5 class="pg-card-title">Key Features</h5>
+          <div id="mppFeatures" class="pg-features"></div>
+        </div>
+
+        <div class="pg-card">
+          <h5 class="pg-card-title">Development Tools</h5>
+          <div id="mppTools" class="pg-tags"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- FOOTER -->
+  <footer class="mt-24 bg-gradient-to-r from-[#4a0000] via-[#7a0000] to-[#b91c1c] text-white text-center py-8">
+    <p class="text-base">&copy; 2026 Ashanniah. All rights reserved.</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
